@@ -42,9 +42,6 @@ body {
 
 .card .photo-container {
     width: 40%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
 }
 .card .photo {
     background-image: url('./me.jpeg');
@@ -72,4 +69,58 @@ body {
 .card .footer img {
     width: 30px;
     padding: 5px;
+}
+
+@media (max-width: 860px) {
+    .card {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(226, 226, 226);
+        display: flex;
+        flex-direction: column;
+    }
+    .card .body {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        overflow: auto;
+    }
+
+    .card .photo-container {
+        width: 100%;
+        height: 45vh;
+    }
+    .card .photo {
+        background-image: url('./me.jpeg');
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    .card .body .title {
+        color: rgb(47, 82, 56);
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .card .footer {
+        position: fixed;
+        right: 0px; top: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-color: rgb(102, 172, 119);
+        border-radius: 20px 0 0 20px;
+        padding: 5px;
+    }
+    .card .footer img {
+        width: 40px;
+        padding: 5px;
+    }
+
 }
