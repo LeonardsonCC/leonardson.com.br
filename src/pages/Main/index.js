@@ -51,12 +51,14 @@ const Main = () => {
                             sun :
                             moon
                     }
+                    alt="icon to alternate theme"
                     />
             </Button>
             <MainTheme>
                 <Container>
                     <Header>
-                        <h1>Leonardson</h1>
+                        <h1 className="BigName">Leonardson</h1>
+                        <h1 className="SmallName">Leo</h1>
                         <h4>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet nibh nisi, sit; Aenean nec ex et quam convallis dictum. Ut luctus at leo id gravida. In maximus ligula sed.
                         </h4>

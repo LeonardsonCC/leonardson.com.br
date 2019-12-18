@@ -1,11 +1,11 @@
 import React from 'react'
-import './styles.scss'
+import { SliderItemTheme } from './styles'
 
 const SliderItem = ({ image, title, description }) => {
 
     
     return (
-        <div className="SliderItem">
+        <SliderItemTheme>
             <div className="SliderImage" style={{backgroundImage: `url(${image})`}} />
             <div className="SliderText">
                 <h2>{title}</h2>
@@ -13,7 +13,7 @@ const SliderItem = ({ image, title, description }) => {
                     {description}
                 </p>
             </div>
-        </div>
+        </SliderItemTheme>
     )
 }
 

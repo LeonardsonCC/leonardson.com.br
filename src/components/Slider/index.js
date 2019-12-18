@@ -1,11 +1,12 @@
 import React from 'react'
-import './styles.scss'
+import { SliderTheme } from './styles'
 
 import SliderItem from '../SliderItem'
 
 const Slider = ({ items }) => {
+    
     return (
-        <div className="Slider">
+        <SliderTheme>
             {
                 items.map((item) => <SliderItem 
                                         key={item.id} 
@@ -13,7 +14,7 @@ const Slider = ({ items }) => {
                                         title={item.title} 
                                         description={item.description} />)
             }
-        </div>
+        </SliderTheme>
     )
 }
 

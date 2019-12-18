@@ -1,4 +1,6 @@
-.SliderItem {
+import styled from 'styled-components'
+
+export const SliderItemTheme = styled.div`
     margin: 0 40px;
     min-width: 300px;
     height: 420px;
@@ -19,4 +21,4 @@
             margin: 10px 0;
         }
     }
-}
+    `
