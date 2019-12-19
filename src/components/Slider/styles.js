@@ -9,7 +9,7 @@ export const SliderTheme = styled.div`
         overflow-x: auto;
         padding: 60px 10px;
 
-        @media(max-width: ${breakpoints.mobileM}) {
+        @media(max-width: ${breakpoints.tablet}) {
             padding: 60px 0; 
             width: 90vw;
         }

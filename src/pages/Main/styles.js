@@ -8,7 +8,7 @@ export const MainTheme = styled.div`
         min-height: 100vh;
 
         background: ${({ theme }) => theme.body};
-        font-family: 'Courier Prime', monospace;
+        font-family: 'Fira Code', monospace;
         color: ${({ theme }) => theme.text};
 
         transition: all 0.25s linear;
@@ -17,13 +17,13 @@ export const Container = styled.div`
         margin: auto;
         width: 70%;
 
-        @media (max-width: ${breakpoints.mobileM}) {
+        @media (max-width: ${breakpoints.tablet}) {
             width: 100%;   
         }
     `
 
 export const Header = styled.div`
-        min-height: 80vh;
+        min-height: 90vh;
 
         display: flex;
         align-items: center;
@@ -33,39 +33,52 @@ export const Header = styled.div`
 
         h1 {
             font-size: 3.5rem;
+            opacity: 0;
             margin: 30px;
-            border-bottom: ${({ theme }) => theme.text} 3px solid;
-            &.SmallName {
-                display: none;
-            }
-            @media (max-width: ${breakpoints.mobileM}) {
-                &.BigName {
-                    display: none;
-                }
-                &.SmallName {
-                    display: block
+            animation: fade-in-slide .8s forwards;
+            font-weight: 700;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -3px; left: -5px;
+                background-color: ${({ theme }) => theme.text};
+                height: 3px;
+                animation: underline 1s forwards 1.6s;
+                @keyframes underline {
+                    0% {
+                        width: 0;
+                    }
+                    100% {
+                        width: calc(100% + 10px);
+                    }
                 }
             }
         }
         h4 {
             width: 60%;
             font-size: 1.1rem;
+            opacity: 0;
+            animation: fade-in-slide .8s forwards .5s;
+            font-weight: 400;
 
-            @media (max-width: ${breakpoints.mobileM}) {
+            @media (max-width: ${breakpoints.tablet}) {
                 width: 80%;   
             }
         }
     `
 
 export const Info = styled.div`
+        min-height: 100vh;
         width: 75%;
         margin: auto;
         padding: 20px;
+        animation: fade-in-slide 1s forwards;
 
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: space-between;
-        @media (max-width: ${breakpoints.mobileM}) {
+        @media (max-width: ${breakpoints.tablet}) {
             flex-direction: column;   
             width: 90%;
         }
@@ -79,10 +92,11 @@ export const Info = styled.div`
             border-radius: 20px;
             cursor: pointer;
             box-shadow: 3px 3px 10px rgba(20, 20, 20, 0.795);
-            @media (max-width: ${breakpoints.mobileM}) {
+            @media (max-width: ${breakpoints.tablet}) {
                 align-self: center;
-                width: 100%;
-                height: 300px;   
+                width: 350px;
+                max-width: 95%;
+                height: 390px;   
             }
         }
 
@@ -93,7 +107,7 @@ export const Info = styled.div`
             align-items: center;
             text-align: center;
             font-size: 1.1rem;
-            @media (max-width: ${breakpoints.mobileM}) {
+            @media (max-width: ${breakpoints.tablet}) {
                 width: 100%;
                 margin-top: 60px;   
             }
@@ -102,7 +116,7 @@ export const Info = styled.div`
                 font-size: 2.5rem;
                 margin: 10px;
                 border-bottom: 3px solid ${({ theme }) => theme.text};
-                @media (max-width: ${breakpoints.mobileM}) {
+                @media (max-width: ${breakpoints.tablet}) {
                     margin-bottom: 20px;   
                 }
             }
@@ -114,8 +128,9 @@ export const Projects = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
+        animation: fade-in-slide 1s forwards;
 
-        @media (max-width: ${breakpoints.mobileM}) {
+        @media (max-width: ${breakpoints.tablet}) {
             padding: 60px 0;   
         }
 
@@ -134,9 +149,18 @@ export const Button = styled.span`
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
 
         img {
             width: 25px;
             height: 25px;
         }
+    `
+
+export const Divider = styled.a`
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        opacity: 0;
+        animation: fade-in-slide .8s forwards 2s;
     `
