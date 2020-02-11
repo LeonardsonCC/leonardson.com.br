@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Slider from '../../components/Slider'
 
 import GreenPigeonImage from '../../assets/green_pigeon.png'
@@ -13,6 +13,8 @@ import { MainTheme, Container, Header, Info, Projects, Button, Divider } from '.
 import IconDownArrow from '../../components/IconDownArrow'
 
 const Main = () => {
+    const [theme, setTheme] = useState(true)
+    
     const projects = [
         {
             id: 1,
@@ -21,13 +23,35 @@ const Main = () => {
             image: GreenPigeonImage
         }
     ]
+    
+    const getUserTheme = () => {
+        if (sessionStorage.getItem('theme') !== null) {
+            setTheme(sessionStorage.getItem('theme') === 'dark')
+        }
+        else {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setTheme(true)
+            }
+            else {
+                setTheme(true)
+            }
+        }
+    }
 
-    const actualTheme = sessionStorage.getItem('theme') !== null ? sessionStorage.getItem('theme') === 'dark' : true
-    const [theme, setTheme] = useState(actualTheme)
+    // Update user theme
+    useEffect(() => {
+        getUserTheme()
+    })
+    
     const changeTheme = () => {
         sessionStorage.setItem('theme', !theme ? 'dark' : 'light')
         setTheme(!theme)
     }
+
+    const birthday = new Date('2000-09-24T00:00:00')
+    const ageDifMs = Date.now() - birthday.getTime();
+    const ageDate = new Date(ageDifMs); // miliseconds from epoch
+    const yearsOld = Math.abs(ageDate.getUTCFullYear() - 1970);
 
     return (
         <ThemeProvider theme={theme ? darkTheme : lightTheme}>
@@ -58,7 +82,7 @@ const Main = () => {
                         <div className="Text">
                             <h2>Sobre mim</h2>
                             <p>
-                                Tenho 19 anos, estou cursando Ciência da Computação na Unisul (Universidade do Sul de Santa Catarina) e trabalho 
+                                Tenho {yearsOld} anos, estou cursando Ciência da Computação na Unisul (Universidade do Sul de Santa Catarina) e trabalho 
                                 com desenvolvimento a aproximadamente 1 ano.
                                 <br /> <br />
                                 Iniciei na programação aos 13 anos, tentando fazer <i>mods</i> para jogos utilizando Java.
