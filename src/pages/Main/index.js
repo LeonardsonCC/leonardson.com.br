@@ -33,7 +33,7 @@ const Main = () => {
                 setTheme(true)
             }
             else {
-                setTheme(true)
+                setTheme(false)
             }
         }
     }
