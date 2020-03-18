@@ -141,7 +141,7 @@ export const Projects = styled.div`
         }
     `
 
-export const Button = styled.span`
+export const ButtonSetTheme = styled.span`
         width: 50px;
         height: 50px;
         position: absolute;
@@ -164,3 +164,22 @@ export const Divider = styled.a`
         opacity: 0;
         animation: fade-in-slide .8s forwards 2s;
     `
+
+export const Icon = styled.svg`
+    fill: ${({ theme }) => theme.text};
+    width: 30px;
+    height: 30px;
+`
+
+export const SocialMedia = styled.div`
+    margin-top: 30px; 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    animation: fade-in-slide 2.1s forwards;
+
+    ${Icon} {
+        margin: 5px;
+    }
+` 
