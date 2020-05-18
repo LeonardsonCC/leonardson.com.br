@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-import { Wrapper, Project } from './styles';
+import { Wrapper, Project, Title } from './styles';
 
 const Projects = () => {
     const [projects, setProjects] = useState([])
@@ -19,6 +19,7 @@ const Projects = () => {
     
     return (
         <Wrapper>
+            <Title>Meu GitHub</Title>
             {projects.length > 0 ? projects.map(item => (
                 <Project key={item.name} href={item.html_url} target="_blank">
                     <h4>{item.name}</h4>

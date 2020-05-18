@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Slider from '../../components/Slider'
 
-import GreenPigeonImage from '../../assets/green_pigeon.png'
 import moon from '../../assets/moon.svg'
 import sun from '../../assets/sun.svg'
 
@@ -15,15 +13,6 @@ import Projects from '../../components/Projects';
 
 const Main = () => {
     const [theme, setTheme] = useState(true)
-    
-    const projects = [
-        {
-            id: 1,
-            title: 'Green Pigeon',
-            description: 'Lorem ipsum dolor sit amet; Aenean nec ex et quam convallis dictum. Ut luctus at leo id gravida. In maximus ligula sed.',
-            image: GreenPigeonImage
-        }
-    ]
     
     const getUserTheme = () => {
         if (sessionStorage.getItem('theme') !== null) {
