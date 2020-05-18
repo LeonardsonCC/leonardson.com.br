@@ -11,6 +11,7 @@ import { darkTheme, lightTheme } from '../../themes/themes'
 
 import { MainTheme, Container, Header, Info, Icon, ButtonSetTheme, Divider, SocialMedia } from './styles'
 import IconDownArrow from '../../components/IconDownArrow'
+import Projects from '../../components/Projects';
 
 const Main = () => {
     const [theme, setTheme] = useState(true)
@@ -106,10 +107,7 @@ const Main = () => {
                             </p>
                         </div>
                     </Info>
-                    {/* <Projects>
-                        <h1 className="Title">Projetos</h1>
-                        <Slider items={projects} />
-                    </Projects> */}
+                    <Projects />
                 </Container>
             </MainTheme>
         </ThemeProvider>
