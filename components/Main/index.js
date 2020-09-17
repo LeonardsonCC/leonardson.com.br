@@ -20,7 +20,7 @@ const Main = () => {
         </a>
         <a
           id="facebook"
-          href="https://facebook.com/LeonardsonCC"
+          href="https://www.facebook.com/LeonardsonCC/"
           target="__blank"
         >
           <Icon
@@ -34,7 +34,7 @@ const Main = () => {
         </a>
         <a
           id="linkedin"
-          href="https://www.linkedin.cin/LeonardsonCC/"
+          href="https://www.linkedin.com/in/leonardsoncc/"
           target="__blank"
         >
           <Icon
